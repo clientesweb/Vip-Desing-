@@ -66,9 +66,9 @@
             theme: {
                 extend: {
                     colors: {
-                        primary: '#D4AF37',
-                        secondary: '#B8860B',
-                        accent: '#000000',
+                        primary: '#FFFFFF',
+                        secondary: '#000000',
+                        accent: '#333333',
                     },
                     fontFamily: {
                         sans: ['Poppins', 'sans-serif'],
@@ -83,7 +83,7 @@
     <style type="text/tailwindcss">
         @layer utilities {
             .bg-gradient-primary {
-                background-image: linear-gradient(135deg, #D4AF37, #B8860B, #000000);
+                background-image: linear-gradient(135deg, #FFFFFF, #000000);
             }
             .text-shadow {
                 text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
@@ -103,8 +103,8 @@
                 animation: marquee 20s linear infinite;
             }
             @keyframes marquee {
-                0% { transform: translateX(100%); }
-                100% { transform: translateX(-100%); }
+                0% { transform: translateX(0); }
+                100% { transform: translateX(-50%); }
             }
             .bounce {
                 animation: bounce 1s infinite;
@@ -173,6 +173,29 @@
                 width: auto;
                 margin: 0 auto;
             }
+
+            .animate-slide {
+                animation: slide 20s linear infinite;
+            }
+
+            @keyframes slide {
+                0% {
+                    transform: translateX(0);
+                }
+                100% {
+                    transform: translateX(-50%);
+                }
+            }
+
+            .instagram-slider {
+                mask-image: linear-gradient(
+                    to right,
+                    transparent,
+                    black 10%,
+                    black 90%,
+                    transparent
+                );
+            }
         }
     </style>
 </head>
@@ -188,8 +211,8 @@
         <svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%">
             <defs>
                 <pattern id="news-pattern" x="0" y="0" width="100" height="100" patternUnits="userSpaceOnUse">
-                    <text x="10" y="50" font-family="Arial" font-size="20" fill="#D4AF37">VIP</text>
-                    <text x="50" y="80" font-family="Arial" font-size="15" fill="#B8860B">DESIGN</text>
+                    <text x="10" y="50" font-family="Arial" font-size="20" fill="#FFFFFF">VIP</text>
+                    <text x="50" y="80" font-family="Arial" font-size="15" fill="#FFFFFF">DESIGN</text>
                 </pattern>
             </defs>
             <rect width="100%" height="100%" fill="url(#news-pattern)" />
@@ -229,6 +252,28 @@
     </header>
 
     <main class="container mx-auto px-4 py-8 relative z-10">
+        <!-- New Banner with Video Background -->
+        <section class="relative h-screen mb-12 overflow-hidden">
+            <video 
+                class="absolute inset-0 w-full h-full object-cover"
+                autoplay 
+                loop 
+                muted 
+                playsinline
+            >
+                <source src="video/luxury-cars-banner.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+            <div class="absolute inset-0 bg-black bg-opacity-50 flex flex-col items-center justify-center text-center">
+                <h1 class="text-4xl md:text-6xl font-bold text-white mb-6 text-shadow">Experience Luxury Redefined</h1>
+                <p class="text-xl md:text-2xl text-white mb-8 max-w-2xl">Discover the pinnacle of automotive customization with VIP Design</p>
+                <div class="flex space-x-4">
+                    <a href="#services" class="bg-primary text-secondary px-8 py-3 rounded-full font-bold hover:bg-white transition-colors duration-300">Our Services</a>
+                    <a href="#contact" class="bg-transparent border-2 border-primary text-primary px-8 py-3 rounded-full font-bold hover:bg-primary hover:text-secondary transition-colors duration-300">Contact Us</a>
+                </div>
+            </div>
+        </section>
+
         <!-- Hero Section -->
         <section class="mb-12 fade-in">
             <div class="relative overflow-hidden rounded-xl shadow-2xl instagram-reel">
@@ -256,21 +301,65 @@
             </p>
         </section>
 
-        <!-- Services Section -->
+        <!-- Services Section with Background Images -->
         <section id="services" class="mb-12 fade-in">
             <h2 class="text-4xl font-serif font-bold text-center mb-6 text-primary">Our Services</h2>
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                <div class="bg-gray-900 p-6 rounded-lg">
-                    <h3 class="text-xl font-bold mb-4 text-primary">Custom Vehicle Design</h3>
-                    <p class="text-white/80">Tailored luxury vehicle designs to meet your specific needs and preferences.</p>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="relative h-80 rounded-lg overflow-hidden group">
+                    <img src="images/service1.jpg" alt="Custom Vehicle Design" class="absolute inset-0 w-full h-full object-cover">
+                    <div class="absolute inset-0 bg-black bg-opacity-60 group-hover:bg-opacity-40 transition-all duration-300"></div>
+                    <div class="relative z-10 p-6 h-full flex flex-col justify-end">
+                        <h3 class="text-xl font-bold mb-4 text-white">Custom Vehicle Design</h3>
+                        <p class="text-white/80 transform translate-y-8 group-hover:translate-y-0 transition-transform duration-300">
+                            Tailored luxury vehicle designs to meet your specific needs and preferences.
+                        </p>
+                    </div>
                 </div>
-                <div class="bg-gray-900 p-6 rounded-lg">
-                    <h3 class="text-xl font-bold mb-4 text-primary">Bus Customization</h3>
-                    <p class="text-white/80">Transform ordinary buses into extraordinary mobile spaces of luxury and comfort.</p>
+                <div class="relative h-80 rounded-lg overflow-hidden group">
+                    <img src="images/service2.jpg" alt="Bus Customization" class="absolute inset-0 w-full h-full object-cover">
+                    <div class="absolute inset-0 bg-black bg-opacity-60 group-hover:bg-opacity-40 transition-all duration-300"></div>
+                    <div class="relative z-10 p-6 h-full flex flex-col justify-end">
+                        <h3 class="text-xl font-bold mb-4 text-white">Bus Customization</h3>
+                        <p class="text-white/80 transform translate-y-8 group-hover:translate-y-0 transition-transform duration-300">
+                            Transform ordinary buses into extraordinary mobile spaces of luxury and comfort.
+                        </p>
+                    </div>
                 </div>
-                <div class="bg-gray-900 p-6 rounded-lg">
-                    <h3 class="text-xl font-bold mb-4 text-primary">Convection Solutions</h3>
-                    <p class="text-white/80">Innovative convection designs for optimal climate control in our custom vehicles.</p>
+                <div class="relative h-80 rounded-lg overflow-hidden group">
+                    <img src="images/service3.jpg" alt="Convection Solutions" class="absolute inset-0 w-full h-full object-cover">
+                    <div class="absolute inset-0 bg-black bg-opacity-60 group-hover:bg-opacity-40 transition-all duration-300"></div>
+                    <div class="relative z-10 p-6 h-full flex flex-col justify-end">
+                        <h3 class="text-xl font-bold mb-4 text-white">Convection Solutions</h3>
+                        <p class="text-white/80 transform translate-y-8 group-hover:translate-y-0 transition-transform duration-300">
+                            Innovative convection designs for optimal climate control in our custom vehicles.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Brand Logos Slider -->
+        <section class="mb-12 fade-in">
+            <h2 class="text-4xl font-serif font-bold text-center mb-6 text-primary">Brands We Work With</h2>
+            <div class="relative overflow-hidden">
+                <div class="flex animate-marquee">
+                    <!-- Duplicate these items for continuous scroll -->
+                    <div class="flex-none w-48 h-24 mx-4">
+                        <img src="images/brand1.png" alt="Brand 1" class="w-full h-full object-contain">
+                    </div>
+                    <div class="flex-none w-48 h-24 mx-4">
+                        <img src="images/brand2.png" alt="Brand 2" class="w-full h-full object-contain">
+                    </div>
+                    <div class="flex-none w-48 h-24 mx-4">
+                        <img src="images/brand3.png" alt="Brand 3" class="w-full h-full object-contain">
+                    </div>
+                    <div class="flex-none w-48 h-24 mx-4">
+                        <img src="images/brand4.png" alt="Brand 4" class="w-full h-full object-contain">
+                    </div>
+                    <div class="flex-none w-48 h-24 mx-4">
+                        <img src="images/brand5.png" alt="Brand 5" class="w-full h-full object-contain">
+                    </div>
+                    <!-- Duplicate the above items -->
                 </div>
             </div>
         </section>
@@ -301,27 +390,134 @@
                 <!-- Add more gallery items as needed -->
             </div>
         </section>
-       
-        <!-- Contact Section -->
+
+        <!-- Instagram Posts Slider -->
+        <section class="mb-12 fade-in">
+            <h2 class="text-4xl font-serif font-bold text-center mb-6 text-primary">Instagram Feed</h2>
+            <div class="relative">
+                <div class="instagram-slider overflow-hidden">
+                    <div class="flex animate-slide">
+                        <!-- Duplicate these items for continuous scroll -->
+                        <div class="flex-none w-72 h-72 p-2">
+                            <div class="bg-secondary rounded-lg overflow-hidden">
+                                <img src="images/insta1.jpg" alt="Instagram Post 1" class="w-full h-full object-cover">
+                            </div>
+                        </div>
+                        <!-- Add more Instagram posts -->
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Instagram Reels Section -->
+        <section class="mb-12 fade-in">
+            <h2 class="text-4xl font-serif font-bold text-center mb-6 text-primary">Latest Reels</h2>
+            <div class="horizontal-scroll">
+                <div class="scroll-item w-[315px]">
+                    <div class="instagram-reel bg-secondary rounded-lg overflow-hidden">
+                        <video 
+                            class="w-full h-full object-cover"
+                            src="video/reel1.mp4"
+                            controls
+                            poster="images/reel1-poster.jpg"
+                        ></video>
+                    </div>
+                </div>
+                <!-- Add more reels -->
+            </div>
+        </section>
+
+        <!-- Modernized Contact Section -->
         <section id="contact" class="mb-12 fade-in">
             <h2 class="text-4xl font-serif font-bold text-center mb-6 text-primary">Contact Us</h2>
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-                <div>
-                    <h3 class="text-2xl font-bold mb-4">Get in Touch</h3>
-                    <form id="contact-form" class="space-y-4">
-                        <input type="text" name="name" placeholder="Your Name" class="w-full p-2 bg-gray-900 text-white rounded" required>
-                        <input type="email" name="email" placeholder="Your Email" class="w-full p-2 bg-gray-900 text-white rounded" required>
-                        <textarea name="message" placeholder="Your Message" rows="4" class="w-full p-2 bg-gray-900 text-white rounded" required></textarea>
-                        <button type="submit" class="bg-primary text-black px-6 py-2 rounded hover:bg-opacity-80 transition-colors duration-300">Send Message</button>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-6xl mx-auto">
+                <div class="bg-secondary/10 p-8 rounded-2xl backdrop-blur-sm">
+                    <h3 class="text-2xl font-bold mb-6 text-primary">Get in Touch</h3>
+                    <form id="contact-form" class="space-y-6">
+                        <div class="relative">
+                            <i class="fas fa-user absolute left-4 top-1/2 transform -translate-y-1/2 text-white/50"></i>
+                            <input 
+                                type="text" 
+                                name="name" 
+                                placeholder="Your Name" 
+                                class="w-full p-4 pl-12 bg-secondary/20 text-white rounded-lg border border-white/10 focus:border-primary focus:ring-1 focus:ring-primary transition-all duration-300"
+                                required
+                            >
+                        </div>
+                        <div class="relative">
+                            <i class="fas fa-envelope absolute left-4 top-1/2 transform -translate-y-1/2 text-white/50"></i>
+                            <input 
+                                type="email" 
+                                name="email" 
+                                placeholder="Your Email" 
+                                class="w-full p-4 pl-12 bg-secondary/20 text-white rounded-lg border border-white/10 focus:border-primary focus:ring-1 focus:ring-primary transition-all duration-300"
+                                required
+                            >
+                        </div>
+                        <div class="relative">
+                            <i class="fas fa-message absolute left-4 top-6 text-white/50"></i>
+                            <textarea 
+                                name="message" 
+                                placeholder="Your Message" 
+                                rows="4" 
+                                class="w-full p-4 pl-12 bg-secondary/20 text-white rounded-lg border border-white/10 focus:border-primary focus:ring-1 focus:ring-primary transition-all duration-300"
+                                required
+                            ></textarea>
+                        </div>
+                        <button 
+                            type="submit" 
+                            class="w-full bg-primary text-secondary font-bold px-8 py-4 rounded-lg hover:bg-white/90 transition-colors duration-300 flex items-center justify-center gap-2"
+                        >
+                            <i class="fas fa-paper-plane"></i>
+                            Send Message
+                        </button>
                     </form>
                 </div>
-                <div>
-                    <h3 class="text-2xl font-bold mb-4">Contact Information</h3>
-                    <p class="mb-2"><strong>Address:</strong> VIP Design Luxury Automobile, City walk - Al Wasl - Dubai - United Arab Emirates</p>
-                    <p class="mb-2"><strong>Phone:</strong> +971 52 823 1111 / +971 52 123 3313</p>
-                    <p class="mb-2"><strong>Email:</strong> info@vipdesign.ae</p>
-                    <h4 class="text-xl font-bold mt-6 mb-2">Business Hours</h4>
-                    <p>Monday - Sunday: 10:00 AM - 10:00 PM</p>
+                
+                <div class="space-y-8">
+                    <div class="bg-secondary/10 p-8 rounded-2xl backdrop-blur-sm">
+                        <h3 class="text-2xl font-bold mb-6 text-primary">Contact Information</h3>
+                        <div class="space-y-6">
+                            <div class="flex items-start gap-4">
+                                <div class="flex-none w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center">
+                                    <i class="fas fa-location-dot text-primary text-xl"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-bold text-primary mb-1">Address</h4>
+                                    <p class="text-white/80">VIP Design Luxury Automobile, City walk - Al Wasl - Dubai - United Arab Emirates</p>
+                                </div>
+                            </div>
+                            <div class="flex items-start gap-4">
+                                <div class="flex-none w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center">
+                                    <i class="fas fa-phone text-primary text-xl"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-bold text-primary mb-1">Phone</h4>
+                                    <p class="text-white/80">+971 52 823 1111</p>
+                                    <p class="text-white/80">+971 52 123 3313</p>
+                                </div>
+                            </div>
+                            <div class="flex items-start gap-4">
+                                <div class="flex-none w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center">
+                                    <i class="fas fa-envelope text-primary text-xl"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-bold text-primary mb-1">Email</h4>
+                                    <p class="text-white/80">info@vipdesign.ae</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="bg-secondary/10 p-8 rounded-2xl backdrop-blur-sm">
+                        <h4 class="text-xl font-bold mb-4 text-primary">Business Hours</h4>
+                        <div class="space-y-2">
+                            <div class="flex justify-between items-center">
+                                <span class="text-white/80">Monday - Sunday</span>
+                                <span class="text-primary">10:00 AM - 10:00 PM</span>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </section>
@@ -331,7 +527,7 @@
             <h2 class="text-4xl font-serif font-bold text-center mb-6 text-primary">Find Us</h2>
             <div class="rounded-xl overflow-hidden shadow-lg" style="width: 100%; height: 400px;">
                 <iframe
-                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3610.178703620226!2d55.2707828!3d25.2048493!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3e5f43348a67e24b%3A0xff45e502e1ceb7e2!2sDubai%2C%20United%20Arab%20Emirates!5e0!3m2!1sen!2sus!4v1651234567890!5m2!1sen!2sus"
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3611.8945851852!2d55.26197147536395!3d25.199881077716806!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3e5f43d5fcdad6c5%3A0xa82c26abc898325!2sVIP%20Design%20Luxury%20Automobile%2C%20City%20walk%20-%20Al%20Wasl%20-%20Dubai!5e0!3m2!1sen!2sae!4v1699731749483!5m2!1sen!2sae"
                     width="100%"
                     height="100%"
                     style="border:0;"
@@ -363,107 +559,72 @@
                     <h3 class="text-2xl font-bold mb-4 text-center md:text-left">Connect With Us</h3>
                     <div class="flex justify-center md:justify-start space-x-4">
                         <a href="https://facebook.com/vipdesign" target="_blank" rel="noopener noreferrer" class="text-primary hover:text-secondary transition-colors duration-300">
-                            <i class="fab fa-facebook-f fa-2x"></i>
+                            <i class="fab fa-facebook-f text-2xl"></i>
                         </a>
                         <a href="https://instagram.com/vipdesign" target="_blank" rel="noopener noreferrer" class="text-primary hover:text-secondary transition-colors duration-300">
-                            <i class="fab fa-instagram fa-2x"></i>
+                            <i class="fab fa-instagram text-2xl"></i>
+                        </a>
+                        <a href="https://twitter.com/vipdesign" target="_blank" rel="noopener noreferrer" class="text-primary hover:text-secondary transition-colors duration-300">
+                            <i class="fab fa-twitter text-2xl"></i>
+                        </a>
+                        <a href="https://linkedin.com/company/vipdesign" target="_blank" rel="noopener noreferrer" class="text-primary hover:text-secondary transition-colors duration-300">
+                            <i class="fab fa-linkedin-in text-2xl"></i>
                         </a>
                     </div>
                 </div>
             </div>
             <div class="mt-8 text-center">
+                <h3 class="text-2xl font-bold mb-4">Subscribe to Our Newsletter</h3>
+                <form id="newsletter-form" class="flex flex-col sm:flex-row justify-center items-center gap-4">
+                    <input 
+                        type="email" 
+                        placeholder="Enter your email" 
+                        class="w-full sm:w-64 p-3 rounded-lg bg-secondary/20 text-white border border-white/10 focus:border-primary focus:ring-1 focus:ring-primary transition-all duration-300"
+                        required
+                    >
+                    <button 
+                        type="submit" 
+                        class="w-full sm:w-auto bg-primary text-secondary font-bold px-6 py-3 rounded-lg hover:bg-white/90 transition-colors duration-300"
+                    >
+                        Subscribe
+                    </button>
+                </form>
+            </div>
+            <div class="mt-8 text-center text-white/60">
                 <p>&copy; 2023 VIP Design. All rights reserved.</p>
             </div>
         </div>
     </footer>
-    
-    <!-- Reservation Button -->
-    <button id="openReservationModal" class="fixed bottom-32 right-4 bg-primary text-white p-3 rounded-full shadow-lg hover:bg-secondary transition-colors duration-300 z-50">
-        <img src="images/logo.png" alt="VIP Design Logo" class="w-8 h-8">
-    </button>
 
-    <!-- Reservation Modal -->
-    <div id="reservationModal" class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50 hidden">
-        <div class="bg-white rounded-lg p-8 max-w-md w-full mx-4">
-            <h2 class="text-2xl font-bold mb-4 text-black">Make a Reservation</h2>
-            <form id="reservationForm">
-                <div class="mb-4">
-                    <label for="reservationName" class="block text-sm font-medium text-gray-700">Name</label>
-                    <input type="text" id="reservationName" name="name" required class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-primary focus:ring focus:ring-primary focus:ring-opacity-50">
-                </div>
-                <div class="mb-4">
-                    <label for="reservationEmail" class="block text-sm font-medium text-gray-700">Email</label>
-                    <input type="email" id="reservationEmail" name="email" required class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-primary focus:ring focus:ring-primary focus:ring-opacity-50">
-                </div>
-                <div class="mb-4">
-                    <label for="reservationDate" class="block text-sm font-medium text-gray-700">Preferred Date</label>
-                    <input type="date" id="reservationDate" name="date" required class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-primary focus:ring focus:ring-primary focus:ring-opacity-50">
-                </div>
-                <div class="mb-4">
-                    <label for="reservationService" class="block text-sm font-medium text-gray-700">Service</label>
-                    <select id="reservationService" name="service" required class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-primary focus:ring focus:ring-primary focus:ring-opacity-50">
-                        <option value="">Select a service</option>
-                        <option value="vehicle_design">Custom Vehicle Design</option>
-                        <option value="bus_customization">Bus Customization</option>
-                        <option value="convection_solutions">Convection Solutions</option>
-                    </select>
-                </div>
-                <div class="mb-4">
-                    <label for="reservationMessage" class="block text-sm font-medium text-gray-700">Additional Information</label>
-                    <textarea id="reservationMessage" name="message" rows="3" class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-primary focus:ring focus:ring-primary focus:ring-opacity-50"></textarea>
-                </div>
-                <div class="flex justify-end">
-                    <button type="button" id="closeReservationModal" class="mr-2 px-4 py-2 text-sm font-medium text-gray-700 bg-gray-100 rounded-md hover:bg-gray-200 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary">
-                        Cancel
-                    </button>
-                    <button type="submit" class="px-4 py-2 text-sm font-medium text-white bg-primary rounded-md hover:bg-secondary focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary">
-                        Submit Reservation
-                    </button>
-                </div>
-            </form>
-        </div>
+    <!-- App Bar for Mobile -->
+    <div class="app-bar md:hidden">
+        <nav class="flex justify-around items-center py-2">
+            <a href="#about" class="text-white hover:text-primary transition-colors duration-300">
+                <i class="fas fa-info-circle"></i>
+                <span class="sr-only">About</span>
+            </a>
+            <a href="#services" class="text-white hover:text-primary transition-colors duration-300">
+                <i class="fas fa-cogs"></i>
+                <span class="sr-only">Services</span>
+            </a>
+            <a href="#gallery" class="text-white hover:text-primary transition-colors duration-300">
+                <i class="fas fa-images"></i>
+                <span class="sr-only">Gallery</span>
+            </a>
+            <a href="#contact" class="text-white hover:text-primary transition-colors duration-300">
+                <i class="fas fa-envelope"></i>
+                <span class="sr-only">Contact</span>
+            </a>
+        </nav>
     </div>
 
-    <!-- WhatsApp Button -->
-    <a href="https://wa.me/971528231111" target="_blank" rel="noopener noreferrer" class="fixed bottom-20 right-4 bg-green-500 text-white p-3 rounded-full shadow-lg hover:bg-green-600 transition-colors duration-300 z-50">
-        <i class="fab fa-whatsapp fa-2x"></i>
-    </a>
-
-    <!-- Scroll to Top Button -->
-    <button id="scrollToTopBtn" class="fixed bottom-20 left-4 bg-primary text-black p-3 rounded-full shadow-lg hover:bg-secondary transition-colors duration-300 z-50 hidden">
+    <!-- Back to Top Button -->
+    <button id="back-to-top" class="fixed bottom-20 right-4 bg-primary text-secondary p-2 rounded-full shadow-lg transition-opacity duration-300 opacity-0 pointer-events-none">
         <i class="fas fa-chevron-up"></i>
     </button>
 
-    <!-- Menú inferior estilo aplicación -->
-    <nav class="app-bar py-2 px-4">
-        <ul class="flex justify-around items-center">
-            <li>
-                <a href="#about" class="flex flex-col items-center text-primary hover:text-secondary">
-                    <i class="fas fa-info-circle text-xl"></i>
-                    <span class="text-xs">About</span>
-                </a>
-            </li>
-            <li>
-                <a href="#services" class="flex flex-col items-center text-primary hover:text-secondary">
-                    <i class="fas fa-concierge-bell text-xl"></i>
-                    <span class="text-xs">Services</span>
-                </a>
-            </li>
-            <li>
-                <a href="#gallery" class="flex flex-col items-center text-primary hover:text-secondary">
-                    <i class="fas fa-images text-xl"></i>
-                    <span class="text-xs">Gallery</span>
-                </a>
-            </li>
-            <li>
-                <a href="#contact" class="flex flex-col items-center text-primary hover:text-secondary">
-                    <i class="fas fa-envelope text-xl"></i>
-                    <span class="text-xs">Contact</span>
-                </a>
-            </li>
-        </ul>
-    </nav>
-
-    <script src="script.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    <script src="js/main.js"></script>
 </body>
 </html>
