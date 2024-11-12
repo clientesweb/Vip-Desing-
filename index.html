@@ -204,6 +204,7 @@
     <div id="preloader" class="fixed inset-0 z-50 flex flex-col items-center justify-center bg-black">
         <img src="images/logo.png" alt="VIP Design Logo" class="w-32 h-32 pulse">
         <p class="mt-4 text-primary font-semibold">Luxury Redefined</p>
+        <p class="mt-2 text-sm text-gray-500">Powered By Duality Domain</p>
     </div>
 
     <!-- SVG Background -->
@@ -217,6 +218,21 @@
             </defs>
             <rect width="100%" height="100%" fill="url(#news-pattern)" />
         </svg>
+    </div>
+
+    <!-- Banner publicitario moderno -->
+    <div class="relative bg-cover bg-center py-16" style="background-image: url('https://images.unsplash.com/photo-1492144534655-ae79c964c9d7?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2000&q=80');">
+        <div class="absolute inset-0 bg-black opacity-60"></div>
+        <div class="container mx-auto px-4 relative z-10">
+            <div class="text-center">
+                <h2 class="text-4xl font-bold text-white mb-4">Experience Luxury Like Never Before</h2>
+                <p class="text-xl text-gray-300 mb-8">Limited time offer: 20% off on all premium customizations</p>
+                <div class="flex justify-center space-x-4">
+                    <a href="#contact" class="bg-primary text-secondary px-6 py-3 rounded-full font-bold hover:bg-white transition duration-300">Book Now</a>
+                    <a href="#services" class="bg-transparent border-2 border-white text-white px-6 py-3 rounded-full font-bold hover:bg-white hover:text-black transition duration-300">Learn More</a>
+                </div>
+            </div>
+        </div>
     </div>
 
     <!-- Top Banner -->
@@ -660,6 +676,7 @@
             </div>
             <div class="mt-8 pt-8 border-t border-white/10 text-center">
                 <p>&copy; 2023 VIP Design. All rights reserved.</p>
+                <p class="mt-2 text-sm text-gray-500">Powered By Duality Domain</p>
             </div>
         </div>
     </footer>
@@ -676,16 +693,16 @@
 
     <!-- Reservation Modal -->
     <div id="reservation-modal" class="fixed inset-0 bg-black bg-opacity-50 z-50 flex items-center justify-center hidden">
-        <div class="bg-white rounded-lg p-8 max-w-md w-full">
-            <h2 class="text-2xl font-bold mb-4 text-black">Make a Reservation</h2>
+        <div class="bg-gray-900 rounded-lg p-8 max-w-md w-full">
+            <h2 class="text-2xl font-bold mb-4 text-white">Make a Reservation</h2>
             <form id="reservation-form" class="space-y-4">
-                <input type="text" placeholder="Your Name" class="w-full p-2 border rounded" required>
-                <input type="email" placeholder="Your Email" class="w-full p-2 border rounded" required>
-                <input type="tel" placeholder="Your Phone" class="w-full p-2 border rounded" required>
-                <input type="date" class="w-full p-2 border rounded" required>
-                <textarea placeholder="Additional Notes" class="w-full p-2 border rounded" rows="3"></textarea>
+                <input type="text" placeholder="Your Name" class="w-full p-2 border rounded bg-gray-800 text-white" required>
+                <input type="email" placeholder="Your Email" class="w-full p-2 border rounded bg-gray-800 text-white" required>
+                <input type="tel" placeholder="Your Phone" class="w-full p-2 border rounded bg-gray-800 text-white" required>
+                <input type="date" class="w-full p-2 border rounded bg-gray-800 text-white" required>
+                <textarea placeholder="Additional Notes" class="w-full p-2 border rounded bg-gray-800 text-white" rows="3"></textarea>
                 <div class="flex justify-end space-x-2">
-                    <button type="button" id="close-modal" class="px-4 py-2 bg-gray-200 rounded">Close</button>
+                    <button type="button" id="close-modal" class="px-4 py-2 bg-gray-600 text-white rounded">Close</button>
                     <button type="submit" class="px-4 py-2 bg-primary text-white rounded">Submit</button>
                 </div>
             </form>
@@ -701,15 +718,19 @@
     <div class="app-bar md:hidden flex justify-around items-center py-4">
         <a href="#about" class="text-white hover:text-primary transition-colors duration-300">
             <i class="fas fa-info-circle text-2xl"></i>
+            <span class="block text-xs mt-1">About</span>
         </a>
         <a href="#services" class="text-white hover:text-primary transition-colors duration-300">
-            <i class="fas fa-cogs text-2xl"></i>
+            <i class="fas fa-tools text-2xl"></i>
+            <span class="block text-xs mt-1">Services</span>
         </a>
         <a href="#gallery" class="text-white hover:text-primary transition-colors duration-300">
             <i class="fas fa-images text-2xl"></i>
+            <span class="block text-xs mt-1">Gallery</span>
         </a>
         <a href="#contact" class="text-white hover:text-primary transition-colors duration-300">
             <i class="fas fa-envelope text-2xl"></i>
+            <span class="block text-xs mt-1">Contact</span>
         </a>
     </div>
 
