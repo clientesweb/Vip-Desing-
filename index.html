@@ -220,8 +220,8 @@
     </div>
 
     <!-- Top Banner -->
-    <div class="bg-primary text-black py-2 px-4 overflow-hidden">
-        <div id="banner-messages" class="flex transition-transform duration-1000 ease-in-out">
+    <div class="bg-primary text-black py-2 overflow-hidden w-full">
+        <div id="banner-messages" class="flex transition-transform duration-1000 ease-in-out container mx-auto px-4">
             <!-- Messages will be inserted here dynamically -->
         </div>
     </div>
@@ -392,19 +392,15 @@
         </section>
 
         <!-- Instagram Posts Slider -->
-        <section class="mb-12 fade-in">
+        <section class="mb-12 fade-in overflow-hidden">
             <h2 class="text-4xl font-serif font-bold text-center mb-6 text-primary">Instagram Feed</h2>
-            <div class="relative">
-                <div class="instagram-slider overflow-hidden">
-                    <div class="flex animate-slide">
-                        <!-- Duplicate these items for continuous scroll -->
-                        <div class="flex-none w-72 h-72 p-2">
-                            <div class="bg-secondary rounded-lg overflow-hidden">
-                                <img src="images/insta1.jpg" alt="Instagram Post 1" class="w-full h-full object-cover">
-                            </div>
-                        </div>
-                        <!-- Add more Instagram posts -->
-                    </div>
+            <div class="instagram-slider">
+                <div class="flex animate-slide">
+                    <!-- Replace these with actual Instagram embeds -->
+                    <blockquote class="instagram-media" data-instgrm-captioned data-instgrm-permalink="https://www.instagram.com/p/XXXXXXXX/" style="width: 320px;"></blockquote>
+                    <blockquote class="instagram-media" data-instgrm-captioned data-instgrm-permalink="https://www.instagram.com/p/XXXXXXXX/" style="width: 320px;"></blockquote>
+                    <blockquote class="instagram-media" data-instgrm-captioned data-instgrm-permalink="https://www.instagram.com/p/XXXXXXXX/" style="width: 320px;"></blockquote>
+                    <!-- Duplicate the above for continuous scroll -->
                 </div>
             </div>
         </section>
@@ -413,17 +409,11 @@
         <section class="mb-12 fade-in">
             <h2 class="text-4xl font-serif font-bold text-center mb-6 text-primary">Latest Reels</h2>
             <div class="horizontal-scroll">
-                <div class="scroll-item w-[315px]">
-                    <div class="instagram-reel bg-secondary rounded-lg overflow-hidden">
-                        <video 
-                            class="w-full h-full object-cover"
-                            src="video/reel1.mp4"
-                            controls
-                            poster="images/reel1-poster.jpg"
-                        ></video>
-                    </div>
-                </div>
-                <!-- Add more reels -->
+                <!-- Replace these with actual Instagram Reel embeds -->
+                <blockquote class="instagram-media" data-instgrm-captioned data-instgrm-permalink="https://www.instagram.com/reel/XXXXXXXX/" style="width: 320px;"></blockquote>
+                <blockquote class="instagram-media" data-instgrm-captioned data-instgrm-permalink="https://www.instagram.com/reel/XXXXXXXX/" style="width: 320px;"></blockquote>
+                <blockquote class="instagram-media" data-instgrm-captioned data-instgrm-permalink="https://www.instagram.com/reel/XXXXXXXX/" style="width: 320px;"></blockquote>
+                <!-- Add more reels as needed -->
             </div>
         </section>
 
@@ -547,84 +537,91 @@
                     <p class="text-center md:text-left">Luxury redefined through innovative vehicle design and customization.</p>
                 </div>
                 <div class="text-center md:text-left">
-                    <h3 class="text-2xl font-bold mb-4">Quick Links</h3>
+                    <h3 class="text-xl font-bold mb-4">Quick Links</h3>
                     <ul class="space-y-2">
-                        <li><a href="#about" class="hover:text-primary transition-colors duration-300">About</a></li>
-                        <li><a href="#services" class="hover:text-primary transition-colors duration-300">Services</a></li>
+                        <li><a href="#about" class="hover:text-primary transition-colors duration-300">About Us</a></li>
+                        <li><a href="#services" class="hover:text-primary transition-colors duration-300">Our Services</a></li>
                         <li><a href="#gallery" class="hover:text-primary transition-colors duration-300">Gallery</a></li>
                         <li><a href="#contact" class="hover:text-primary transition-colors duration-300">Contact</a></li>
                     </ul>
                 </div>
-                <div>
-                    <h3 class="text-2xl font-bold mb-4 text-center md:text-left">Connect With Us</h3>
-                    <div class="flex justify-center md:justify-start space-x-4">
-                        <a href="https://facebook.com/vipdesign" target="_blank" rel="noopener noreferrer" class="text-primary hover:text-secondary transition-colors duration-300">
-                            <i class="fab fa-facebook-f text-2xl"></i>
-                        </a>
-                        <a href="https://instagram.com/vipdesign" target="_blank" rel="noopener noreferrer" class="text-primary hover:text-secondary transition-colors duration-300">
-                            <i class="fab fa-instagram text-2xl"></i>
-                        </a>
-                        <a href="https://twitter.com/vipdesign" target="_blank" rel="noopener noreferrer" class="text-primary hover:text-secondary transition-colors duration-300">
-                            <i class="fab fa-twitter text-2xl"></i>
-                        </a>
-                        <a href="https://linkedin.com/company/vipdesign" target="_blank" rel="noopener noreferrer" class="text-primary hover:text-secondary transition-colors duration-300">
-                            <i class="fab fa-linkedin-in text-2xl"></i>
-                        </a>
-                    </div>
+                <div class="text-center md:text-left">
+                    <h3 class="text-xl font-bold mb-4">Newsletter</h3>
+                    <p class="mb-4">Stay updated with our latest news and offers.</p>
+                    <form id="newsletter-form" class="flex flex-col sm:flex-row gap-4">
+                        <input 
+                            type="email" 
+                            placeholder="Your email" 
+                            class="flex-grow p-2 rounded-lg bg-white/10 border border-white/20 focus:border-primary focus:ring-1 focus:ring-primary transition-all duration-300"
+                            required
+                        >
+                        <button 
+                            type="submit" 
+                            class="bg-primary text-secondary px-6 py-2 rounded-lg hover:bg-white/90 transition-colors duration-300"
+                        >
+                            Subscribe
+                        </button>
+                    </form>
                 </div>
             </div>
-            <div class="mt-8 text-center">
-                <h3 class="text-2xl font-bold mb-4">Subscribe to Our Newsletter</h3>
-                <form id="newsletter-form" class="flex flex-col sm:flex-row justify-center items-center gap-4">
-                    <input 
-                        type="email" 
-                        placeholder="Enter your email" 
-                        class="w-full sm:w-64 p-3 rounded-lg bg-secondary/20 text-white border border-white/10 focus:border-primary focus:ring-1 focus:ring-primary transition-all duration-300"
-                        required
-                    >
-                    <button 
-                        type="submit" 
-                        class="w-full sm:w-auto bg-primary text-secondary font-bold px-6 py-3 rounded-lg hover:bg-white/90 transition-colors duration-300"
-                    >
-                        Subscribe
-                    </button>
-                </form>
-            </div>
-            <div class="mt-8 text-center text-white/60">
+            <div class="mt-8 pt-8 border-t border-white/10 text-center">
                 <p>&copy; 2023 VIP Design. All rights reserved.</p>
             </div>
         </div>
     </footer>
 
-    <!-- App Bar for Mobile -->
-    <div class="app-bar md:hidden">
-        <nav class="flex justify-around items-center py-2">
-            <a href="#about" class="text-white hover:text-primary transition-colors duration-300">
-                <i class="fas fa-info-circle"></i>
-                <span class="sr-only">About</span>
-            </a>
-            <a href="#services" class="text-white hover:text-primary transition-colors duration-300">
-                <i class="fas fa-cogs"></i>
-                <span class="sr-only">Services</span>
-            </a>
-            <a href="#gallery" class="text-white hover:text-primary transition-colors duration-300">
-                <i class="fas fa-images"></i>
-                <span class="sr-only">Gallery</span>
-            </a>
-            <a href="#contact" class="text-white hover:text-primary transition-colors duration-300">
-                <i class="fas fa-envelope"></i>
-                <span class="sr-only">Contact</span>
-            </a>
-        </nav>
+    <!-- Floating WhatsApp Button -->
+    <a href="https://wa.me/971528231111" target="_blank" rel="noopener noreferrer" class="fixed bottom-24 right-4 z-50 bg-green-500 text-white rounded-full p-4 shadow-lg hover:bg-green-600 transition-colors duration-300">
+        <i class="fab fa-whatsapp text-2xl"></i>
+    </a>
+
+    <!-- Floating Reservation Button -->
+    <button id="reservation-btn" class="fixed bottom-24 left-4 z-50 bg-primary text-secondary rounded-full p-4 shadow-lg hover:bg-white transition-colors duration-300">
+        <i class="fas fa-calendar-alt text-2xl"></i>
+    </button>
+
+    <!-- Reservation Modal -->
+    <div id="reservation-modal" class="fixed inset-0 bg-black bg-opacity-50 z-50 flex items-center justify-center hidden">
+        <div class="bg-white rounded-lg p-8 max-w-md w-full">
+            <h2 class="text-2xl font-bold mb-4 text-black">Make a Reservation</h2>
+            <form id="reservation-form" class="space-y-4">
+                <input type="text" placeholder="Your Name" class="w-full p-2 border rounded" required>
+                <input type="email" placeholder="Your Email" class="w-full p-2 border rounded" required>
+                <input type="tel" placeholder="Your Phone" class="w-full p-2 border rounded" required>
+                <input type="date" class="w-full p-2 border rounded" required>
+                <textarea placeholder="Additional Notes" class="w-full p-2 border rounded" rows="3"></textarea>
+                <div class="flex justify-end space-x-2">
+                    <button type="button" id="close-modal" class="px-4 py-2 bg-gray-200 rounded">Close</button>
+                    <button type="submit" class="px-4 py-2 bg-primary text-white rounded">Submit</button>
+                </div>
+            </form>
+        </div>
     </div>
 
     <!-- Back to Top Button -->
-    <button id="back-to-top" class="fixed bottom-20 right-4 bg-primary text-secondary p-2 rounded-full shadow-lg transition-opacity duration-300 opacity-0 pointer-events-none">
+    <button id="back-to-top" class="fixed bottom-4 right-4 bg-primary text-secondary p-2 rounded-full shadow-lg opacity-0 pointer-events-none transition-opacity duration-300">
         <i class="fas fa-chevron-up"></i>
     </button>
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    <!-- App Bar for Mobile -->
+    <div class="app-bar md:hidden flex justify-around items-center py-4">
+        <a href="#about" class="text-white hover:text-primary transition-colors duration-300">
+            <i class="fas fa-info-circle text-2xl"></i>
+        </a>
+        <a href="#services" class="text-white hover:text-primary transition-colors duration-300">
+            <i class="fas fa-cogs text-2xl"></i>
+        </a>
+        <a href="#gallery" class="text-white hover:text-primary transition-colors duration-300">
+            <i class="fas fa-images text-2xl"></i>
+        </a>
+        <a href="#contact" class="text-white hover:text-primary transition-colors duration-300">
+            <i class="fas fa-envelope text-2xl"></i>
+        </a>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/ScrollTrigger.min.js"></script>
+    <script async src="//www.instagram.com/embed.js"></script>
     <script src="script.js"></script>
 </body>
 </html>
