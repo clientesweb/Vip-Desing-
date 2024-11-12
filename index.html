@@ -252,29 +252,19 @@
     </header>
 
     <main class="container mx-auto px-4 py-8 relative z-10">
-        <!-- New Banner with Video Background -->
-        <section class="relative h-screen mb-12 overflow-hidden">
-            <video 
-                class="absolute inset-0 w-full h-full object-cover"
-                autoplay 
-                loop 
-                muted 
-                playsinline
-            >
-                <source src="video/luxury-cars-banner.mp4" type="video/mp4">
-                Your browser does not support the video tag.
-            </video>
-            <div class="absolute inset-0 bg-black bg-opacity-50 flex flex-col items-center justify-center text-center">
-                <h1 class="text-4xl md:text-6xl font-bold text-white mb-6 text-shadow">Experience Luxury Redefined</h1>
-                <p class="text-xl md:text-2xl text-white mb-8 max-w-2xl">Discover the pinnacle of automotive customization with VIP Design</p>
-                <div class="flex space-x-4">
-                    <a href="#services" class="bg-primary text-secondary px-8 py-3 rounded-full font-bold hover:bg-white transition-colors duration-300">Our Services</a>
-                    <a href="#contact" class="bg-transparent border-2 border-primary text-primary px-8 py-3 rounded-full font-bold hover:bg-primary hover:text-secondary transition-colors duration-300">Contact Us</a>
-                </div>
+        <!-- Instagram Reels Section (Moved above Hero) -->
+        <section class="mb-12 fade-in">
+            <h2 class="text-4xl font-serif font-bold text-center mb-6 text-primary">Latest Reels</h2>
+            <div class="horizontal-scroll">
+                <!-- Replace these with actual Instagram Reel embeds -->
+                <blockquote class="instagram-media" data-instgrm-captioned data-instgrm-permalink="https://www.instagram.com/reel/XXXXXXXX/" style="width: 320px;"></blockquote>
+                <blockquote class="instagram-media" data-instgrm-captioned data-instgrm-permalink="https://www.instagram.com/reel/XXXXXXXX/" style="width: 320px;"></blockquote>
+                <blockquote class="instagram-media" data-instgrm-captioned data-instgrm-permalink="https://www.instagram.com/reel/XXXXXXXX/" style="width: 320px;"></blockquote>
+                <!-- Add more reels as needed -->
             </div>
         </section>
 
-        <!-- Hero Section -->
+        <!-- Hero Section (Moved below Instagram Reels) -->
         <section class="mb-12 fade-in">
             <div class="relative overflow-hidden rounded-xl shadow-2xl instagram-reel">
                 <video 
@@ -301,12 +291,12 @@
             </p>
         </section>
 
-        <!-- Services Section with Background Images -->
+        <!-- Services Section with Updated Images -->
         <section id="services" class="mb-12 fade-in">
             <h2 class="text-4xl font-serif font-bold text-center mb-6 text-primary">Our Services</h2>
             <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
                 <div class="relative h-80 rounded-lg overflow-hidden group">
-                    <img src="images/service1.jpg" alt="Custom Vehicle Design" class="absolute inset-0 w-full h-full object-cover">
+                    <img src="https://images.unsplash.com/photo-1605559424843-9e4c228bf1c2?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2000&q=80" alt="Custom Vehicle Design" class="absolute inset-0 w-full h-full object-cover">
                     <div class="absolute inset-0 bg-black bg-opacity-60 group-hover:bg-opacity-40 transition-all duration-300"></div>
                     <div class="relative z-10 p-6 h-full flex flex-col justify-end">
                         <h3 class="text-xl font-bold mb-4 text-white">Custom Vehicle Design</h3>
@@ -316,7 +306,7 @@
                     </div>
                 </div>
                 <div class="relative h-80 rounded-lg overflow-hidden group">
-                    <img src="images/service2.jpg" alt="Bus Customization" class="absolute inset-0 w-full h-full object-cover">
+                    <img src="https://images.unsplash.com/photo-1494976388531-d1058494cdd8?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2000&q=80" alt="Bus Customization" class="absolute inset-0 w-full h-full object-cover">
                     <div class="absolute inset-0 bg-black bg-opacity-60 group-hover:bg-opacity-40 transition-all duration-300"></div>
                     <div class="relative z-10 p-6 h-full flex flex-col justify-end">
                         <h3 class="text-xl font-bold mb-4 text-white">Bus Customization</h3>
@@ -326,7 +316,7 @@
                     </div>
                 </div>
                 <div class="relative h-80 rounded-lg overflow-hidden group">
-                    <img src="images/service3.jpg" alt="Convection Solutions" class="absolute inset-0 w-full h-full object-cover">
+                    <img src="https://images.unsplash.com/photo-1492144534655-ae79c964c9d7?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2000&q=80" alt="Convection Solutions" class="absolute inset-0 w-full h-full object-cover">
                     <div class="absolute inset-0 bg-black bg-opacity-60 group-hover:bg-opacity-40 transition-all duration-300"></div>
                     <div class="relative z-10 p-6 h-full flex flex-col justify-end">
                         <h3 class="text-xl font-bold mb-4 text-white">Convection Solutions</h3>
@@ -360,11 +350,26 @@
                         <img src="images/brand5.png" alt="Brand 5" class="w-full h-full object-contain">
                     </div>
                     <!-- Duplicate the above items -->
+                    <div class="flex-none w-48 h-24 mx-4">
+                        <img src="images/brand1.png" alt="Brand 1" class="w-full h-full object-contain">
+                    </div>
+                    <div class="flex-none w-48 h-24 mx-4">
+                        <img src="images/brand2.png" alt="Brand 2" class="w-full h-full object-contain">
+                    </div>
+                    <div class="flex-none w-48 h-24 mx-4">
+                        <img src="images/brand3.png" alt="Brand 3" class="w-full h-full object-contain">
+                    </div>
+                    <div class="flex-none w-48 h-24 mx-4">
+                        <img src="images/brand4.png" alt="Brand 4" class="w-full h-full object-contain">
+                    </div>
+                    <div class="flex-none w-48 h-24 mx-4">
+                        <img src="images/brand5.png" alt="Brand 5" class="w-full h-full object-contain">
+                    </div>
                 </div>
             </div>
         </section>
 
-        <!-- Gallery Section -->
+        <!-- Gallery Section with Updated Images -->
         <section id="gallery" class="mb-12 fade-in">
             <h2 class="text-4xl font-serif font-bold text-center mb-6 text-primary">Our Gallery</h2>
             
@@ -379,15 +384,113 @@
             <!-- Gallery images -->
             <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4" id="gallery">
                 <div class="gallery-item vehicles">
-                    <img src="images/vehicle1.jpg" alt="Luxury Vehicle 1" class="w-full h-64 object-cover rounded-lg shadow-md transition-transform duration-300 hover:scale-105">
+                    <img src="https://images.unsplash.com/photo-1583121274602-3e2820c69888?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80" alt="Luxury Vehicle 1" class="w-full h-64 object-cover rounded-lg shadow-md transition-transform duration-300 hover:scale-105">
                 </div>
                 <div class="gallery-item interiors">
-                    <img src="images/interior1.jpg" alt="Custom Interior 1" class="w-full h-64 object-cover rounded-lg shadow-md transition-transform duration-300 hover:scale-105">
+                    <img src="https://images.unsplash.com/photo-1503376780353-7e6692767b70?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80" alt="Custom Interior 1" class="w-full h-64 object-cover rounded-lg shadow-md transition-transform duration-300 hover:scale-105">
                 </div>
                 <div class="gallery-item designs">
-                    <img src="images/design1.jpg" alt="Vehicle Design 1" class="w-full h-64 object-cover rounded-lg shadow-md transition-transform duration-300 hover:scale-105">
+                    <img src="https://images.unsplash.com/photo-1618843479313-40f8afb4b4d8?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80" alt="Vehicle Design 1" class="w-full h-64 object-cover rounded-lg shadow-md transition-transform duration-300 hover:scale-105">
                 </div>
                 <!-- Add more gallery items as needed -->
+            </div>
+        </section>
+
+        <!-- New FAQ Section -->
+        <section id="faq" class="mb-12 fade-in">
+            <h2 class="text-4xl font-serif font-bold text-center mb-6 text-primary">Frequently Asked Questions</h2>
+            <div class="space-y-4">
+                <div class="bg-secondary/10 p-4 rounded-lg">
+                    <button class="flex justify-between items-center w-full text-left" onclick="toggleFAQ(this)">
+                        <span class="font-bold">What types of vehicles do you customize?</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </button>
+                    <div class="mt-2 hidden">
+                        <p>We specialize in customizing a wide range of luxury vehicles, including sedans, SUVs, sports cars, and even buses. Our team has experience working with various high-end brands and can tailor our services to meet your specific needs.</p>
+                    </div>
+                </div>
+                <div class="bg-secondary/10 p-4 rounded-lg">
+                    <button class="flex justify-between items-center w-full text-left" onclick="toggleFAQ(this)">
+                        <span class="font-bold">How long does a typical customization project take?</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </button>
+                    <div class="mt-2 hidden">
+                        <p>The duration of a customization project can vary depending on the complexity and scope of the work. Simple modifications might take a few days, while more extensive customizations could take several weeks or even months. We'll provide you with a detailed timeline during the consultation process.</p>
+                    </div>
+                </div>
+                <div class="bg-secondary/10 p-4 rounded-lg">
+                    <button class="flex justify-between items-center w-full text-left" onclick="toggleFAQ(this)">
+                        <span class="font-bold">Do you offer warranty on your customization work?</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </button>
+                    <div class="mt-2 hidden">
+                        <p>Yes, we stand behind the quality of our work. All our customizations come with a warranty that covers workmanship and materials. The specific terms and duration of the warranty may vary depending on the type of customization performed.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- New Customer Reviews Section -->
+        <section id="reviews" class="mb-12 fade-in">
+            <h2 class="text-4xl font-serif font-bold text-center mb-6 text-primary">Customer Reviews</h2>
+            <div class="relative overflow-hidden">
+                <div class="flex animate-slide">
+                    <div class="flex-none w-80 p-4">
+                        <div class="bg-secondary/10 p-6 rounded-lg h-full">
+                            <div class="flex items-center mb-4">
+                                <img src="https://i.pravatar.cc/60?img=1" alt="Customer" class="w-12 h-12 rounded-full mr-4">
+                                <div>
+                                    <h4 class="font-bold">John Doe</h4>
+                                    <div class="flex text-yellow-400">
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                    </div>
+                                </div>
+                            </div>
+                            <p class="text-sm">"Incredible customization work! VIP Design transformed my car into a true masterpiece. Their attention to detail is unmatched."</p>
+                        </div>
+                    </div>
+                    <div class="flex-none w-80 p-4">
+                        <div class="bg-secondary/10 p-6 rounded-lg h-full">
+                            <div class="flex items-center mb-4">
+                                <img src="https://i.pravatar.cc/60?img=2" alt="Customer" class="w-12 h-12 rounded-full mr-4">
+                                <div>
+                                    <h4 class="font-bold">Jane Smith</h4>
+                                    <div class="flex text-yellow-400">
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star-half-alt"></i>
+                                    </div>
+                                </div>
+                            </div>
+                            <p class="text-sm">"The team at VIP Design is professional and creative. They listened to my ideas and brought them to life beautifully."</p>
+                        </div>
+                    </div>
+                    <!-- Add more review items as needed -->
+                    <div class="flex-none w-80 p-4">
+                        <div class="bg-secondary/10 p-6 rounded-lg h-full">
+                            <div class="flex items-center mb-4">
+                                <img src="https://i.pravatar.cc/60?img=3" alt="Customer" class="w-12 h-12 rounded-full mr-4">
+                                <div>
+                                    <h4 class="font-bold">Mike Johnson</h4>
+                                    <div class="flex text-yellow-400">
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                    </div>
+                                </div>
+                            </div>
+                            <p class="text-sm">"VIP Design exceeded my expectations. The level of craftsmanship and attention to detail in my vehicle's customization is simply outstanding."</p>
+                        </div>
+                    </div>
+                </div>
             </div>
         </section>
 
@@ -401,19 +504,10 @@
                     <blockquote class="instagram-media" data-instgrm-captioned data-instgrm-permalink="https://www.instagram.com/p/XXXXXXXX/" style="width: 320px;"></blockquote>
                     <blockquote class="instagram-media" data-instgrm-captioned data-instgrm-permalink="https://www.instagram.com/p/XXXXXXXX/" style="width: 320px;"></blockquote>
                     <!-- Duplicate the above for continuous scroll -->
+                    <blockquote class="instagram-media" data-instgrm-captioned data-instgrm-permalink="https://www.instagram.com/p/XXXXXXXX/" style="width: 320px;"></blockquote>
+                    <blockquote class="instagram-media" data-instgrm-captioned data-instgrm-permalink="https://www.instagram.com/p/XXXXXXXX/" style="width: 320px;"></blockquote>
+                    <blockquote class="instagram-media" data-instgrm-captioned data-instgrm-permalink="https://www.instagram.com/p/XXXXXXXX/" style="width: 320px;"></blockquote>
                 </div>
-            </div>
-        </section>
-
-        <!-- Instagram Reels Section -->
-        <section class="mb-12 fade-in">
-            <h2 class="text-4xl font-serif font-bold text-center mb-6 text-primary">Latest Reels</h2>
-            <div class="horizontal-scroll">
-                <!-- Replace these with actual Instagram Reel embeds -->
-                <blockquote class="instagram-media" data-instgrm-captioned data-instgrm-permalink="https://www.instagram.com/reel/XXXXXXXX/" style="width: 320px;"></blockquote>
-                <blockquote class="instagram-media" data-instgrm-captioned data-instgrm-permalink="https://www.instagram.com/reel/XXXXXXXX/" style="width: 320px;"></blockquote>
-                <blockquote class="instagram-media" data-instgrm-captioned data-instgrm-permalink="https://www.instagram.com/reel/XXXXXXXX/" style="width: 320px;"></blockquote>
-                <!-- Add more reels as needed -->
             </div>
         </section>
 
@@ -493,7 +587,7 @@
                                 </div>
                                 <div>
                                     <h4 class="font-bold text-primary mb-1">Email</h4>
-                                    <p class="text-white/80">info@vipdesign.ae</p>
+                                    <p class="text-white/80"><a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="fc95929a93bc8a958c98998f959b92d29d99">[email&#160;protected]</a></p>
                                 </div>
                             </div>
                         </div>
@@ -619,9 +713,18 @@
         </a>
     </div>
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/gsap.min.js"></script>
+    <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/gsap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/ScrollTrigger.min.js"></script>
     <script async src="//www.instagram.com/embed.js"></script>
     <script src="script.js"></script>
+    <script>
+        function toggleFAQ(element) {
+            const content = element.nextElementSibling;
+            const icon = element.querySelector('i');
+            content.classList.toggle('hidden');
+            icon.classList.toggle('fa-chevron-down');
+            icon.classList.toggle('fa-chevron-up');
+        }
+    </script>
 </body>
 </html>
