@@ -70,8 +70,6 @@ document.addEventListener('DOMContentLoaded', function() {
     const contactForm = document.getElementById('contact-form');
     contactForm.addEventListener('submit', async (e) => {
         e.preventDefault();
-        // Add your form submission logic here
-        // For example, you could use fetch to send the data to your server
         try {
             const formData = new FormData(contactForm);
             const response = await fetch('/api/contact', {
@@ -94,7 +92,6 @@ document.addEventListener('DOMContentLoaded', function() {
     const newsletterForm = document.getElementById('newsletter-form');
     newsletterForm.addEventListener('submit', async (e) => {
         e.preventDefault();
-        // Add your newsletter subscription logic here
         try {
             const formData = new FormData(newsletterForm);
             const response = await fetch('/api/newsletter', {
@@ -243,4 +240,51 @@ document.addEventListener('DOMContentLoaded', function() {
             }
         });
     });
+
+    // Reservation modal functionality
+    const reservationBtn = document.getElementById('reservation-btn');
+    const reservationModal = document.getElementById('reservation-modal');
+    const closeModalBtn = document.getElementById('close-modal');
+    const reservationForm = document.getElementById('reservation-form');
+
+    reservationBtn.addEventListener('click', () => {
+        reservationModal.classList.remove('hidden');
+    });
+
+    closeModalBtn.addEventListener('click', () => {
+        reservationModal.classList.add('hidden');
+    });
+
+    reservationForm.addEventListener('submit', async (e) => {
+        e.preventDefault();
+        try {
+            const formData = new FormData(reservationForm);
+            const response = await fetch('/api/reservation', {
+                method: 'POST',
+                body: formData
+            });
+            if (response.ok) {
+                alert('Thank you for your reservation. We will confirm shortly!');
+                reservationForm.reset();
+                reservationModal.classList.add('hidden');
+            } else {
+                throw new Error('Reservation submission failed');
+            }
+        } catch (error) {
+            console.error('Error:', error);
+            alert('There was an error submitting your reservation. Please try again later.');
+        }
+    });
+
+    // Close modal when clicking outside
+    window.addEventListener('click', (e) => {
+        if (e.target === reservationModal) {
+            reservationModal.classList.add('hidden');
+        }
+    });
+
+    console.log('All scripts loaded and initialized successfully.');
 });
+
+// Log to confirm the script has loaded
+console.log('main.js has been loaded');
