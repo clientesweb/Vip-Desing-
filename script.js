@@ -58,35 +58,43 @@ filterButtons.forEach(button => {
 });
 
 // Reservation Modal
-const openReservationModal = document.getElementById('openReservationModal');
-const closeReservationModal = document.getElementById('closeReservationModal');
-const reservationModal =
+const reservationBtn = document.getElementById('reservation-btn');
+const closeModal = document.getElementById('close-modal');
+const reservationModal = document.getElementById('reservation-modal');
+const reservationForm = document.getElementById('reservation-form');
 
- document.getElementById('reservationModal');
-const reservationForm = document.getElementById('reservationForm');
-
-openReservationModal.addEventListener('click', () => {
+reservationBtn.addEventListener('click', () => {
     reservationModal.classList.remove('hidden');
 });
 
-closeReservationModal.addEventListener('click', () => {
+closeModal.addEventListener('click', () => {
     reservationModal.classList.add('hidden');
 });
 
-reservationForm.addEventListener('submit', (e) => {
+reservationForm.addEventListener('submit', async (e) => {
     e.preventDefault();
     const formData = new FormData(reservationForm);
-    let message = "New Reservation:\n\n";
-    for (let [key, value] of formData.entries()) {
-        message += `${key}: ${value}\n`;
+    
+    try {
+        const response = await fetch('https://formspree.io/f/your_formspree_id', {
+            method: 'POST',
+            body: formData,
+            headers: {
+                'Accept': 'application/json'
+            }
+        });
+        
+        if (response.ok) {
+            alert('Reservation submitted successfully!');
+            reservationForm.reset();
+            reservationModal.classList.add('hidden');
+        } else {
+            throw new Error('Reservation submission failed');
+        }
+    } catch (error) {
+        console.error('Error:', error);
+        alert('There was an error submitting your reservation. Please try again.');
     }
-    
-    // Replace this URL with your actual WhatsApp API endpoint
-    const whatsappUrl = `https://api.whatsapp.com/send?phone=971528231111&text=${encodeURIComponent(message)}`;
-    window.open(whatsappUrl, '_blank');
-    
-    reservationModal.classList.add('hidden');
-    reservationForm.reset();
 });
 
 // Close modal if clicking outside
@@ -96,18 +104,18 @@ reservationModal.addEventListener('click', (e) => {
     }
 });
 
-// Scroll to Top button
-const scrollToTopBtn = document.getElementById('scrollToTopBtn');
+// Back to Top Button
+const backToTopBtn = document.getElementById('back-to-top');
 
 window.addEventListener('scroll', function() {
     if (window.pageYOffset > 300) {
-        scrollToTopBtn.classList.remove('hidden');
+        backToTopBtn.classList.remove('opacity-0', 'pointer-events-none');
     } else {
-        scrollToTopBtn.classList.add('hidden');
+        backToTopBtn.classList.add('opacity-0', 'pointer-events-none');
     }
 });
 
-scrollToTopBtn.addEventListener('click', function() {
+backToTopBtn.addEventListener('click', function() {
     window.scrollTo({
         top: 0,
         behavior: 'smooth'
@@ -117,18 +125,97 @@ scrollToTopBtn.addEventListener('click', function() {
 // Contact form submission
 const contactForm = document.getElementById('contact-form');
 
-contactForm.addEventListener('submit', (e) => {
+contactForm.addEventListener('submit', async (e) => {
     e.preventDefault();
     const formData = new FormData(contactForm);
-    let message = "New Contact Form Submission:\n\n";
-    for (let [key, value] of formData.entries()) {
-        message += `${key}: ${value}\n`;
+    
+    try {
+        const response = await fetch('https://formspree.io/f/your_formspree_id', {
+            method: 'POST',
+            body: formData,
+            headers: {
+                'Accept': 'application/json'
+            }
+        });
+        
+        if (response.ok) {
+            alert('Thank you for your message. We will get back to you soon!');
+            contactForm.reset();
+        } else {
+            throw new Error('Message submission failed');
+        }
+    } catch (error) {
+        console.error('Error:', error);
+        alert('There was an error submitting your message. Please try again.');
     }
+});
+
+// Newsletter form submission
+const newsletterForm = document.getElementById('newsletter-form');
+
+newsletterForm.addEventListener('submit', async (e) => {
+    e.preventDefault();
+    const formData = new FormData(newsletterForm);
     
-    // Replace this URL with your actual WhatsApp API endpoint
-    const whatsappUrl = `https://api.whatsapp.com/send?phone=971528231111&text=${encodeURIComponent(message)}`;
-    window.open(whatsappUrl, '_blank');
-    
-    contactForm.reset();
-    alert('Thank you for your message. We will get back to you soon!');
+    try {
+        const response = await fetch('https://formspree.io/f/your_formspree_id', {
+            method: 'POST',
+            body: formData,
+            headers: {
+                'Accept': 'application/json'
+            }
+        });
+        
+        if (response.ok) {
+            alert('Thank you for subscribing to our newsletter!');
+            newsletterForm.reset();
+        } else {
+            throw new Error('Newsletter subscription failed');
+        }
+    } catch (error) {
+        console.error('Error:', error);
+        alert('There was an error subscribing to the newsletter. Please try again.');
+    }
+});
+
+// FAQ toggle
+function toggleFAQ(element) {
+    const content = element.nextElementSibling;
+    const icon = element.querySelector('i');
+    content.classList.toggle('hidden');
+    icon.classList.toggle('fa-chevron-down');
+    icon.classList.toggle('fa-chevron-up');
+}
+
+// Initialize AOS (Animate on Scroll)
+AOS.init({
+    duration: 1000,
+    once: true,
+});
+
+// Initialize Swiper for customer reviews
+const swiper = new Swiper('.swiper-container', {
+    slidesPerView: 1,
+    spaceBetween: 30,
+    loop: true,
+    autoplay: {
+        delay: 5000,
+        disableOnInteraction: false,
+    },
+    pagination: {
+        el: '.swiper-pagination',
+        clickable: true,
+    },
+    navigation: {
+        nextEl: '.swiper-button-next',
+        prevEl: '.swiper-button-prev',
+    },
+    breakpoints: {
+        640: {
+            slidesPerView: 2,
+        },
+        1024: {
+            slidesPerView: 3,
+        },
+    },
 });
